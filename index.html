@@ -671,6 +671,7 @@ document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: fal
 // ── MAIN LOOP ───────────────────────────────────────────────────────────────────────
 let last = performance.now(), lastHb = 0, lastHud = 0;
 function frame(now) {
+  requestAnimationFrame(frame);
   let dt = Math.max(0, Math.min(0.05, (now - last) / 1000)); last = now; // the first frame can be stamped before `last`
   if (now - lastHb > 1000) { lastHb = now; net.me.set("hb", Date.now()); fixColor(); }
   const m0 = match();
@@ -684,7 +685,6 @@ function frame(now) {
     draw(m, now / 1000, dt);
     if (now - lastHud > 100) { lastHud = now; hud(m); }
   }
-  requestAnimationFrame(frame);
 }
 
 (async function start() {
