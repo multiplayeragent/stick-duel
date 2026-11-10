@@ -1,0 +1,21 @@
+{
+  "name": "Stick Duel",
+  "genre": "fighting",
+  "dim": "2D",
+  "mode": "Versus",
+  "players": "2",
+  "hook": "Punch, kick, block. First to three rounds wins.",
+  "how": "One on one on a rooftop dojo. Punch is fast, kick hits harder and farther, and holding block soaks up most of a hit. Land punch, punch, kick for a combo that knocks them flat. Win three rounds to take the match; the winner stays on.",
+  "controls": "Arrow keys with Z, X and C, or on-screen buttons",
+  "uses": [
+    ["Leaderboard", "The players with the most match wins."],
+    ["Host-run rounds", "The host's browser runs the timer, calls each K.O. and counts the rounds; if it leaves, the next player takes over."],
+    ["Bots", "A bot takes the empty side and blocks, punches and combos back, so you can play alone."],
+    ["Live sync", "Every move, hit and block shows up on both screens at once."]
+  ],
+  "ideas": [
+    "Add a special move that charges up as you take hits",
+    "Make the fighters ninjas with swords",
+    "Add a ring-out edge to the rooftop"
+  ]
+}
