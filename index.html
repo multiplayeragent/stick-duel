@@ -538,7 +538,7 @@ function drawFighter(f, color, t, dt, label) {
   if (f.st !== "ko") { ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(head[0] + dir * 5, head[1] + 1, 2.2, 0, Math.PI * 2); ctx.fill(); }
   for (const hand of [parts.aF[2]]) { ctx.fillStyle = lit; ctx.beginPath(); ctx.arc(hand[0], hand[1], 6, 0, Math.PI * 2); ctx.fill(); } // a fist
   if (f.st === "block") { ctx.strokeStyle = "#8fd8ff99"; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(f.x + dir * 10, f.y - 60, 46, dir > 0 ? -1.1 : Math.PI - 1.1 + 0.0, dir > 0 ? 1.1 : Math.PI + 1.1); ctx.stroke(); }
-  if (label && !ATTRACT) { ctx.font = "800 14px system-ui, sans-serif"; ctx.textAlign = "center"; ctx.lineWidth = 4; ctx.strokeStyle = "#000a"; ctx.strokeText(label, f.x, f.y - 128); ctx.fillStyle = label === "You" ? "#ffd166" : "#fff"; ctx.fillText(label, f.x, f.y - 128); }
+  if (label && !ATTRACT) { ctx.font = "800 14px system-ui, sans-serif"; ctx.textAlign = "center"; ctx.lineWidth = 4; ctx.strokeStyle = "#000a"; ctx.strokeText(label, head[0], head[1] - 26); ctx.fillStyle = label === "You" ? "#ffd166" : "#fff"; ctx.fillText(label, head[0], head[1] - 26); } // over the head, wherever it is (down on the floor too)
 }
 function shade(hex, k) { const n = parseInt(hex.slice(1), 16); return `rgb(${((n >> 16) & 255) * k | 0},${((n >> 8) & 255) * k | 0},${(n & 255) * k | 0})`; }
 function draw(m, t, dt) {
